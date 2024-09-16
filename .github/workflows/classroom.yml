@@ -1,0 +1,30 @@
+name: Autograding Tests
+'on':
+- push
+- repository_dispatch
+permissions:
+  checks: write
+  actions: read
+  contents: read
+jobs:
+  run-autograding-tests:
+    runs-on: ubuntu-latest
+    if: github.actor != 'github-classroom[bot]'
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    - name: Normal Test
+      id: normal-test
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: Normal Test
+        setup-command: curl -SsL https://tx.tohka.us/get/L3FgsvMWRI/autograder_script.py
+          -O
+        command: python3 autograder_script.py
+        timeout: 10
+    - name: Autograding Reporter
+      uses: classroom-resources/autograding-grading-reporter@v1
+      env:
+        NORMAL-TEST_RESULTS: "${{steps.normal-test.outputs.result}}"
+      with:
+        runners: normal-test
