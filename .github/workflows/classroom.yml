@@ -20,7 +20,7 @@ jobs:
         test-name: Normal Test
         setup-command: curl -SsL https://tx.tohka.us/get/uc86WPdzlH/autograder_script.py
           -O
-        command: python3 autograder_script.py
+        command: python3.12 autograder_script.py
         timeout: 10
     - name: Autograding Reporter
       uses: classroom-resources/autograding-grading-reporter@v1
