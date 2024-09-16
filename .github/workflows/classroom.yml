@@ -18,7 +18,7 @@ jobs:
       uses: classroom-resources/autograding-command-grader@v1
       with:
         test-name: Normal Test
-        setup-command: curl -SsL https://tx.tohka.us/get/L3FgsvMWRI/autograder_script.py
+        setup-command: curl -SsL https://tx.tohka.us/get/uc86WPdzlH/autograder_script.py
           -O
         command: python3 autograder_script.py
         timeout: 10
