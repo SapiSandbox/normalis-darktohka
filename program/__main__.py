@@ -8,6 +8,10 @@ parser.add_argument('--check', help='WTF')
 args = parser.parse_args()
 
 with open(args.output, 'w', encoding='utf-8') as f:
-    f.write('Anyad')
+    f.write("""IGEN
+NEM
+IGEN
+IGEN
+NEM""")
 
 print()
