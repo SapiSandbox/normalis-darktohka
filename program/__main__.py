@@ -3,6 +3,7 @@ import argparse
 parser = argparse.ArgumentParser('You stink', usage='Gay')
 parser.add_argument('--input', help='Input file')
 parser.add_argument('--output', help='Output file')
+parser.add_argument('--check', help='WTF')
 
 args = parser.parse_args()
 
